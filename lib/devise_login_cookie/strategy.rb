@@ -36,7 +36,7 @@ module DeviseLoginCookie
 
     def resource
       # returns nil when user is missing.
-      @resource ||= mapping.to.where(:id => cookie.id).first
+      @resource ||= mapping.to.find(cookie.id) rescue nil
     end
 
     def pass
